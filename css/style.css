@@ -43,3 +43,21 @@
     background-size: cover;
     opacity: 0.7;
 }
+
+.banana {
+    position: absolute;
+    background: url('../pictures/banana.jpg') left center no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+}
+
+.gorilla {
+    position: absolute;
+    background: url('../pictures/gorilla.jpg') left center no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    margin-left: 400px;
+}
