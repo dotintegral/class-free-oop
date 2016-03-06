@@ -88,3 +88,54 @@ img.better-parts {
   top: -70px;
   left: 80px;
 }
+
+h2.chapter {
+  font-weight: bold;
+  font-size: 70px !important;
+  text-align: center;
+  margin-top: 180px !important;
+}
+
+code {
+  padding: 20px !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+.moveup {
+  position: relative;
+  top: -70px;
+}
+
+.column {
+  width: 48%;
+  float: left;
+}
+
+.uml-block {
+  margin: 10px auto;
+  overflow: hidden;
+  width: 200px;
+  line-height: 45px;
+  border-radius: 20px;
+}
+
+.uml-block.classical {
+  background-color: rgba(217, 209, 18, 0.59);
+}
+
+.uml-block.state {
+  background-color: rgba(129, 217, 18, 0.59);
+}
+
+.uml-block.operations {
+  background-color: rgba(18, 151, 217, 0.59);
+}
+
+.uml-block-content {
+  padding: 0px 20px 10px;
+}
+
+.uml-block-title {
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+}

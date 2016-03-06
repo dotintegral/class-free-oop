@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="themes/warsawjs/styles/ribbon-theme.css">
     <link rel="stylesheet" href="themes/warsawjs/styles/warsawjs-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/languages/javascript.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body class="list">
     <header class="caption">
@@ -38,7 +44,7 @@
                 <h2><strong>Class Free OOP<strong></h2>
 
                 <!-- 4. Presentation date -->
-                <h2>2016-03-XX</h2>
+                <h2>2016-03-09</h2>
 
                 <!-- 5. Contact the speaker -->
                 <h2><a href="http://twitter.com/dotintegral">@dotintegral</a></h2>
@@ -138,6 +144,195 @@
         <div>
           <h2 class="better-parts">The Better Parts</h2>
           <img src="pictures/better-parts.png" class="better-parts" />
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+          <h2 class="chapter">Class Free OOP</h2>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+           <pre class="moveup"><code class="javascript">function createObj (spec) {
+
+
+
+
+
+
+
+
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+           <pre class="moveup"><code class="javascript">function createObj (spec) {
+  let {member1, member2} = spec
+
+
+
+
+
+
+
+}</code></pre>
+        </div>
+    </section>
+    <section class="slide myslide">
+        <div>
+           <pre class="moveup"><code class="javascript">function createObj (spec) {
+  let {member1, member2} = spec
+  let otherObj = createOther(spec)
+
+
+
+
+
+
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+           <pre class="moveup"><code class="javascript">function createObj (spec) {
+  let {member1, member2} = spec
+  let otherObj = createOther(spec)
+
+  let method = () => {
+
+  }
+
+
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+           <pre class="moveup"><code class="javascript">function createObj (spec) {
+  let {member1, member2} = spec
+  let otherObj = createOther(spec)
+
+  let method = () => {
+    otherObj.doSomething()
+  }
+
+
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+           <pre class="moveup"><code class="javascript">function createObj (spec) {
+  let {member1, member2} = spec
+  let otherObj = createOther(spec)
+
+  let method = () => {
+    otherObj.doSomething()
+  }
+
+  return Object.freeze({method})
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+          <div class="column">
+            <div><center>Classical OOP</center></div>
+            <div class="uml-block classical">
+              <div class="uml-block-title">Class</div>
+              <div class="uml-block-content">
+                property1<br />
+                property2<br />
+                property3<br />
+                <br />
+                method1()<br />
+                method2()<br />
+                method3()<br />
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div><center>Class Free OOP</center></div>
+            <div class="uml-block state">
+              <div class="uml-block-title">Specification</div>
+              <div class="uml-block-content">
+                property1<br />
+                property2<br />
+                property3<br />
+              </div>
+            </div>
+            <div class="uml-block operations">
+              <div class="uml-block-title">Operations</div>
+              <div class="uml-block-content">
+                method1()<br />
+                method2()<br />
+                method3()<br />
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
         </div>
     </section>
 
