@@ -277,7 +277,7 @@
               </div>
             </div>
             <div class="uml-block operations">
-              <div class="uml-block-title">Operations</div>
+              <div class="uml-block-title">Operator</div>
               <div class="uml-block-content">
                 method1()<br />
                 method2()<br />
@@ -291,6 +291,77 @@
 
     <section class="slide myslide">
         <div>
+          <h2>Application Architecture</h2>
+          <div class="uml-row">
+            <div>States</div>
+            <div class="uml-block state small">spec</div>
+            <div class="uml-block state small">spec</div>
+            <div class="uml-block state small">spec</div>
+            <div class="uml-block state small">spec</div>
+            <div class="uml-block state small">spec</div>
+          </div>
+          <div class="uml-row">
+            <div>Stateless Operators</div>
+            <div class="uml-block operations small">ops</div>
+            <div class="uml-block operations small">ops</div>
+            <div class="uml-block operations small">ops</div>
+            <div class="uml-block operations small">ops</div>
+            <div class="uml-block operations small">ops</div>
+          </div>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+          <h2>Redux-like architecture</h2>
+          <div class="uml-row">
+            <div>States</div>
+            <div class="uml-block state big">Global Application State</div>
+          </div>
+          <div class="uml-row">
+            <div>Stateless Operators</div>
+            <div class="uml-block operations small">ops</div>
+            <div class="uml-block operations small">ops</div>
+            <div class="uml-block operations small">ops</div>
+            <div class="uml-block operations small">ops</div>
+            <div class="uml-block operations small">ops</div>
+          </div>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+          <h2 class="moveup">Reusing the code</h2>
+           <pre class="moveup"><code class="javascript">function createObj (spec) {
+  let obj1 = createObj1(spec)
+  let obj2 = createObj2(spec)
+  let obj3 = createObj3(spec)
+
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+          <img class="banana-code" src="pictures/banana.jpg" />
+          <h2 class="moveup">Total API control</h2>
+           <pre class="moveup"><code class="javascript">function createObj (spec) {
+  let {fn1, fn2} = createObj1(spec)
+  let {fn3} = createObj2(spec)
+  let {fn4} = createObj3(spec)
+
+  return Object.freeze({fn1, fn2, fn3, fn4})
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+          <h2 class="chapter">Practical Examples</h2>
         </div>
     </section>
 

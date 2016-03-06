@@ -139,3 +139,31 @@ code {
   background-color: rgba(0, 0, 0, 0.2);
   text-align: center;
 }
+
+.uml-row {
+  overflow: auto;
+  margin: 40px 0px;
+}
+
+.uml-row .uml-block {
+  float: left;
+}
+
+.uml-block.small {
+  width: 130px;
+  margin: 0px 10px;
+  text-align: center;
+}
+
+.uml-block.big {
+  width: 730px;
+  margin: 0px 10px;
+  text-align: center;
+}
+
+.banana-code {
+  position: absolute;
+  top: 140px;
+  left: 640px;
+  height: 260px;
+}
