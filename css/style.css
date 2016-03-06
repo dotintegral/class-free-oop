@@ -99,6 +99,8 @@ h2.chapter {
 code {
   padding: 20px !important;
   background: rgba(255, 255, 255, 0.6) !important;
+  width: 760px;
+  font-size: 22px !important;
 }
 
 .moveup {
@@ -109,6 +111,11 @@ code {
 .column {
   width: 48%;
   float: left;
+}
+
+.slide>div {
+  width: 800px;
+  overflow: hidden;
 }
 
 .uml-block {

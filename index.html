@@ -368,6 +368,106 @@
 
     <section class="slide myslide">
         <div>
+          <h2>A button with animation</h2>
+          <p>Let's assume that we already have:</p>
+          <ul>
+            <li>Generic component that renders (renderable)</li>
+            <li>Hiperlink component, that can be clicked (createLink)</li>
+            <li>Animation object (animatable)</li>
+          </ul>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+          <h2 class="moveup"></h2>
+           <pre class="moveup"><code class="javascript">function createButton(spec) {
+  let {render, isRendered} = renderable(spec)
+
+
+
+
+  return Object.freeze({
+    render, isRendered
+  })
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+          <h2 class="moveup"></h2>
+           <pre class="moveup"><code class="javascript">function createButton(spec) {
+  let {render, isRendered} = renderable(spec)
+  let {onClick} = createLink(spec)
+
+
+
+  return Object.freeze({
+    render, isRendered, onClick
+  })
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+          <h2 class="moveup"></h2>
+           <pre class="moveup"><code class="javascript">function createButton(spec) {
+  let {render, isRendered} = renderable(spec)
+  let {onClick, addDOMListeners} = createLink(spec)
+
+
+
+  return Object.freeze({
+    render, isRendered, onClick, addDOMListeners
+  })
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+          <h2 class="moveup"></h2>
+           <pre class="moveup"><code class="javascript">function createButton(spec) {
+  let {render, isRendered} = renderable(spec)
+  let {onClick, addDOMListeners} = createLink(spec)
+  let {onHover, addDOMListeners} = animatable(spec)
+
+
+  return Object.freeze({
+    render, isRendered, onHover, onClick,
+    addDOMListeners
+  })
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
+          <h2 class="moveup"></h2>
+           <pre class="moveup"><code class="javascript">function createButton(spec) {
+  let {render, isRendered} = renderable(spec)
+  let link = createLink(spec)
+  let anmimation = animatable(spec)
+
+  let addDOMListeners = () => {
+    link.addDOMListeners()
+    animation.addDOMListeners()
+  }
+  //...
+}</code></pre>
+        </div>
+    </section>
+
+
+    <section class="slide myslide">
+        <div>
         </div>
     </section>
 
