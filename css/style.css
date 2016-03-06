@@ -7,6 +7,10 @@
     font-style: italic;
 }
 
+h3 {
+  font-size: 35px !important;
+}
+
 .big-quote-desc {
     font-style: italic;
     text-align: center;
@@ -60,4 +64,27 @@
     width: 300px;
     height: 200px;
     margin-left: 400px;
+}
+
+.crockford {
+  width: 300px;
+  float: left;
+  margin-right: 40px;
+}
+
+.the-good-parts {
+  width: 300px;
+  float: left;
+  margin-right: 40px;
+}
+
+.better-parts {
+  position: relative;
+  top: -50px;
+}
+
+img.better-parts {
+  width: 600px;
+  top: -70px;
+  left: 80px;
 }
