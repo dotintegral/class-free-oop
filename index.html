@@ -63,7 +63,7 @@
 
     <section class="slide myslide">
         <div>
-            <h2>From my experience</h2>
+            <h2>My experience</h2>
                 <ul>
                     <li>95% of code uses inheritance</li>
                     <li>Every tutorial about any language explains how to use inheritance</li>
@@ -361,23 +361,9 @@
 
     <section class="slide myslide">
         <div>
-          <h2 class="chapter">Practical Examples</h2>
+          <h2 class="chapter">Example</h2>
         </div>
     </section>
-
-
-    <section class="slide myslide">
-        <div>
-          <h2>A button with animation</h2>
-          <p>Let's assume that we already have:</p>
-          <ul>
-            <li>Generic component that renders (renderable)</li>
-            <li>Hiperlink component, that can be clicked (createLink)</li>
-            <li>Animation object (animatable)</li>
-          </ul>
-        </div>
-    </section>
-
 
     <section class="slide myslide">
         <div>
@@ -388,9 +374,10 @@
 
 
 
-  return Object.freeze({
-    render, isRendered
-  })
+
+
+
+  return Object.freeze({ render, isRendered })
 }</code></pre>
         </div>
     </section>
@@ -405,9 +392,10 @@
 
 
 
-  return Object.freeze({
-    render, isRendered, onClick
-  })
+
+
+
+  return Object.freeze({ render, isRendered, onClick })
 }</code></pre>
         </div>
     </section>
@@ -418,49 +406,14 @@
           <h2 class="moveup"></h2>
            <pre class="moveup"><code class="javascript">function createButton(spec) {
   let {render, isRendered} = renderable(spec)
-  let {onClick, addDOMListeners} = createLink(spec)
+  let {linkOnClick: onClick} = createLink(spec)
+  let {resize} = animationHelper(spec)
 
-
-
-  return Object.freeze({
-    render, isRendered, onClick, addDOMListeners
-  })
-}</code></pre>
-        </div>
-    </section>
-
-
-    <section class="slide myslide">
-        <div>
-          <h2 class="moveup"></h2>
-           <pre class="moveup"><code class="javascript">function createButton(spec) {
-  let {render, isRendered} = renderable(spec)
-  let {onClick, addDOMListeners} = createLink(spec)
-  let {onHover, addDOMListeners} = animatable(spec)
-
-
-  return Object.freeze({
-    render, isRendered, onHover, onClick,
-    addDOMListeners
-  })
-}</code></pre>
-        </div>
-    </section>
-
-
-    <section class="slide myslide">
-        <div>
-          <h2 class="moveup"></h2>
-           <pre class="moveup"><code class="javascript">function createButton(spec) {
-  let {render, isRendered} = renderable(spec)
-  let link = createLink(spec)
-  let anmimation = animatable(spec)
-
-  let addDOMListeners = () => {
-    link.addDOMListeners()
-    animation.addDOMListeners()
+  let onClick = (action) => {
+    linkOnClick(action)
+    resize(spec.newSize)
   }
-  //...
+  return Object.freeze({ render, isRendered, onClick })
 }</code></pre>
         </div>
     </section>
@@ -468,55 +421,115 @@
 
     <section class="slide myslide">
         <div>
+          <h2>Reuse everything</h2>
+          <ul>
+            <li>The type of objects we compose does not matter</li>
+            <li>We can reuse
+              <ul>
+                <li>Objects with basic set of methods (renderable)</li>
+                <li>Standalone components (link)</li>
+                <li>helper objects (animatable)</li>
+              </ul>
+            </li>
+          </ul>
         </div>
     </section>
 
 
     <section class="slide myslide">
         <div>
+          <h2 class="chapter">Cool Features</h2>
         </div>
     </section>
 
 
     <section class="slide myslide">
         <div>
+          <h2>Functional Programming anyone?</h2>
+          Base assumptions of Functional Programming
+          <ul>
+            <li>Functions and object don't have internal states</li>
+            <li>Functions return modified state</li>
+          <ul>
+        </div>
+    </section>
+
+    <section class="slide myslide">
+        <div>
+          <h2 class="moveup">Functional Programming anyone?</h2>
+           <pre class="moveup"><code class="javascript">function createObj(spec) {
+
+  let changeSomething = () => {
+    spec.something = 'changed'
+    return spec
+  }
+
+  return Object.freeze({ changeSomething })
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="slide myslide">
+        <div>
+          <h2>It's easy to test</h2>
+          <ul>
+            <li>Stateless objects are very easy to test</li>
+            <li>Just provide initial state, run method, and check the state</li>
+            <li>No need for huge data mocks</li>
+          <ul>
+        </div>
+    </section>
+
+    <section class="slide myslide">
+        <div>
+          <h2>Test example</h2>
+           <pre><code class="javascript">let state = {value: 1}
+let mathOperators = createMathOperators(state)
+
+mathOperators.add(2)
+
+assertEqual(state.value, 3)
+</code></pre>
+        </div>
+    </section>
+
+
+
+    <section class="slide myslide">
+        <div>
+          <h2 class="chapter">Conclusion</h2>
         </div>
     </section>
 
 
     <section class="slide myslide">
         <div>
+          <h2>Pros</h2>
+          <ul>
+            <li>Composition over inheritance!</li>
+            <li>Reuse everything everywhere</li>
+            <li>Stateless objects</li>
+            <li>Code portability</li>
+            <li>Can be used with Functional Programming and Object Programming</li>
+          </ul>
+        </div>
+    </section>
+
+    <section class="slide myslide">
+        <div>
+          <h2>Cons</h2>
+          <ul>
+            <li>Hard to use with immutable data</li>
+            <li>A new convention to learn</li>
+          </ul>
         </div>
     </section>
 
 
     <section class="slide myslide">
-        <div>
-        </div>
-    </section>
-
-
-    <section class="slide myslide">
-        <div>
-        </div>
-    </section>
-
-
-    <section class="slide myslide">
-        <div>
-        </div>
-    </section>
-
-
-    <section class="slide myslide">
-        <div>
-        </div>
-    </section>
-
-
-    <section class="slide shout">
-        <div>
-            <h2>See you next month at WarsawJS</h2>
+        <div class="end">
+          <img src="pictures/beer.jpg" class="beer" />
+          <h2>Thanks!</h2>
         </div>
     </section>
 

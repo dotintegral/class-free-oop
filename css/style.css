@@ -174,3 +174,12 @@ code {
   left: 640px;
   height: 260px;
 }
+
+.end {
+  text-align: center;
+}
+
+.beer {
+  width: 300px;
+  margin-bottom: 50px;
+}
