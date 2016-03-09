@@ -12,10 +12,25 @@
     <link rel="stylesheet" href="themes/warsawjs/styles/warsawjs-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/languages/javascript.min.js"></script>
 
     <script>hljs.initHighlightingOnLoad();</script>
+
+    <script>
+      document.addEventListener('keypress', function (e) {
+        if (e.keyCode === 97) {
+          var style = document.querySelector('.full .background > div').style
+
+          if (!style.background) {
+            style.background = "none"
+          } else {
+            style.background = ""
+          }
+        }
+      })
+    </script>
 </head>
 <body class="list">
     <header class="caption">
